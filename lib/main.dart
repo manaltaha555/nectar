@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nectar/presentation/pages/login_page.dart';
 import 'package:nectar/presentation/pages/splash_page.dart';
 import 'package:nectar/presentation/themes/buttons_theme.dart';
 import 'package:nectar/presentation/themes/text_theme.dart';
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
         elevatedButtonTheme: ButtonsTheme.elevatedButtonTheme,
         textTheme: TextsTheme.textTheme
       ),
-      home: const SplashPage()
+      home: LoginPage(),
+       //const SplashPage()
     );
   }
 }

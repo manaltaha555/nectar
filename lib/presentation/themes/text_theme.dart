@@ -26,5 +26,17 @@ class TextsTheme {
       fontWeight: FontWeight.w400,
       fontFamily: "Gilori",
     ),
+    bodySmall: TextStyle(
+      color: Color(0XFF181725),
+      fontSize: 14,
+      fontWeight: FontWeight.w400,
+      fontFamily: "Gilori",
+    ),
+     labelLarge: TextStyle(
+      color: Color(0XFF181725),
+      fontSize: 18,
+      fontWeight: FontWeight.w400,
+      fontFamily: "Gilori",
+    ),
   );
 }
