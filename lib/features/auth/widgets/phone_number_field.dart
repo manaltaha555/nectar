@@ -3,12 +3,13 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:intl_phone_field/phone_number.dart';
+import 'package:nectar/core/core.dart';
 
 class PhoneNumberField extends StatelessWidget {
-  PhoneNumberField({super.key, required this.controller, this.validator});
+  const PhoneNumberField({super.key, required this.controller, this.validator});
 
   final TextEditingController controller;
-  FutureOr<String?> Function(PhoneNumber?)? validator;
+  final FutureOr<String?> Function(PhoneNumber?)? validator;
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +33,9 @@ class PhoneNumberField extends StatelessWidget {
       initialCountryCode: 'EG',
       textAlignVertical: TextAlignVertical(y: -1),
       textAlign: TextAlign.center,
-      dropdownTextStyle: theme.bodyMedium,
-      style: theme.bodyMedium,
-      cursorColor: Color(0XFF181725),
+      dropdownTextStyle: theme.titleSmall,
+      style: theme.titleSmall,
+      cursorColor: AppColors.titleColor,
       validator: validator,
     );
   }

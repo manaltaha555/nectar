@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:nectar/presentation/components/phone_number_field.dart';
-import 'package:nectar/presentation/pages/phone_number_page.dart';
+import 'package:nectar/core/core.dart';
+import 'package:nectar/features/auth/widgets/phone_number_field.dart';
+import 'package:nectar/features/auth/screens/login_page.dart';
+import 'package:nectar/features/auth/screens/phone_number_page.dart';
 
 class SigninOptionPage extends StatelessWidget {
   SigninOptionPage({super.key});
@@ -12,9 +14,8 @@ class SigninOptionPage extends StatelessWidget {
     TextTheme theme = Theme.of(context).textTheme;
     return Scaffold(
       body: Column(
-        //crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset("assets/images/start.png"),
+          Image.asset(AppImages.signOptions),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 16),
             child: Column(
@@ -47,7 +48,7 @@ class SigninOptionPage extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 16),
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0XFF5383EC),
+                      backgroundColor: AppColors.blue,
                     ),
                     onPressed: () {},
                     child: Row(
@@ -61,13 +62,21 @@ class SigninOptionPage extends StatelessWidget {
                 ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red[400],
+                    backgroundColor: AppColors.red,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => LoginPage()),
+                    );
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      SvgPicture.asset("assets/icons/google.svg"),
+                      SvgPicture.asset(
+                        AppImages.googleIcon,
+                        height: 30,
+                        width: 30,
+                      ),
                       Text("Continue with gmail", style: theme.labelMedium),
                     ],
                   ),

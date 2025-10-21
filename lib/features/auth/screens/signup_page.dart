@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:nectar/presentation/components/custom_text_form_field.dart';
-import 'package:nectar/presentation/pages/home_page.dart';
-import 'package:nectar/presentation/pages/login_page.dart';
+import 'package:nectar/core/core.dart';
+import 'package:nectar/features/auth/widgets/custom_text_form_field.dart';
+import 'package:nectar/features/home/screens/home_page.dart';
+import 'package:nectar/features/auth/screens/login_page.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
@@ -34,7 +35,7 @@ class _LoginState extends State<SignupPage> {
             children: [
               Expanded(
                 child: Center(
-                  child: SvgPicture.asset("assets/icons/colored_carrot.svg"),
+                  child: SvgPicture.asset(AppImages.coloredCarrot),
                 ),
               ),
               Expanded(
@@ -53,11 +54,9 @@ class _LoginState extends State<SignupPage> {
                 ),
               ),
               SingleChildScrollView(
-                child: Expanded(
-                  flex: 3,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
                       Text(
                         "Username",
                         style: theme.titleLarge!.copyWith(fontSize: 24),
@@ -115,13 +114,13 @@ class _LoginState extends State<SignupPage> {
                               });
                             },
                             icon: isObsecure
-                                ? const Icon(
+                                ? Icon(
                                     Icons.visibility_off,
-                                    color: Color(0xFF7C7C7C),
+                                    color: AppColors.subtitleColor
                                   )
-                                : const Icon(
+                                : Icon(
                                     Icons.visibility,
-                                    color: Color(0xFF7C7C7C),
+                                    color:AppColors.subtitleColor
                                   ),
                           ),
                           controller: password,
@@ -134,9 +133,8 @@ class _LoginState extends State<SignupPage> {
                         ),
                       ),
                     ],
-                  ),
-                ),
-              ),
+          ),
+        ),
               Expanded(
                 flex: 2,
                 child: Column(
@@ -151,14 +149,14 @@ class _LoginState extends State<SignupPage> {
                           TextSpan(
                             text: "Terms Of Service ",
                             style: theme.titleSmall!.copyWith(
-                              color: Color(0XFF53B175),
+                              color: AppColors.primaryColor,
                             ),
                           ),
                           TextSpan(text: "and ", style: theme.titleSmall),
                           TextSpan(
                             text: "Privacy Policy",
                             style: theme.titleSmall!.copyWith(
-                              color: Color(0XFF53B175),
+                              color:AppColors.primaryColor
                             ),
                           ),
                         ],
@@ -203,7 +201,7 @@ class _LoginState extends State<SignupPage> {
                             "Sign in",
                             style: theme.bodySmall!.copyWith(
                               fontWeight: FontWeight.w500,
-                              color: Color(0XFF53B175),
+                              color: AppColors.primaryColor,
                             ),
                           ),
                         ),

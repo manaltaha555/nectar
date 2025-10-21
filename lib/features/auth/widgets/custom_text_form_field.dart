@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nectar/core/core.dart';
 
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
@@ -28,13 +29,13 @@ class CustomTextFormField extends StatelessWidget {
         hintText: hint,
         hintStyle: theme.labelLarge,
         enabledBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: Color(0XFF7C7C7C), width: 0.5),
+          borderSide: BorderSide(color: AppColors.subtitleColor, width: 0.5),
         ),
         focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: Colors.black, width: 1),
+          borderSide: BorderSide(color: AppColors.titleColor, width: 1),
         ),
         errorBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: Colors.red, width: 1),
+          borderSide: BorderSide(color: AppColors.error, width: 1),
         ),
         suffixIcon: suffixIcon,
       ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:intl_phone_field/intl_phone_field.dart';
-import 'package:nectar/presentation/components/phone_number_field.dart';
-import 'package:nectar/presentation/pages/home_page.dart';
+import 'package:nectar/features/auth/widgets/phone_number_field.dart';
+import 'package:nectar/features/home/screens/home_page.dart';
+import 'package:nectar/core/core.dart';
 
 class PhoneNumberPage extends StatelessWidget {
   PhoneNumberPage({super.key});
@@ -22,8 +22,8 @@ class PhoneNumberPage extends StatelessWidget {
             ).push(MaterialPageRoute(builder: (context) => HomePage()));
           }
         },
-        backgroundColor: Color(0XFF53B175),
-        child: Icon(Icons.arrow_forward_ios_outlined, color: Colors.white),
+        backgroundColor: AppColors.primaryColor,
+        child: Icon(Icons.arrow_forward_ios_outlined, color: AppColors.white),
       ),
       appBar: AppBar(
         leading: IconButton(

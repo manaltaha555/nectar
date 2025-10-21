@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:nectar/presentation/pages/signin_option_page.dart';
+import 'package:nectar/features/auth/screens/signin_option_page.dart';
 
 class GetStartedPage extends StatelessWidget {
   const GetStartedPage({super.key});

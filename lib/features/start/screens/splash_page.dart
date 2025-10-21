@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:nectar/presentation/pages/get_started_page.dart';
-import 'package:nectar/presentation/pages/home_page.dart';
+import 'package:nectar/features/start/screens/get_started_page.dart';
 import 'package:shimmer/shimmer.dart';
 
 class SplashPage extends StatefulWidget {

@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nectar/presentation/pages/login_page.dart';
-import 'package:nectar/presentation/pages/splash_page.dart';
-import 'package:nectar/presentation/themes/buttons_theme.dart';
-import 'package:nectar/presentation/themes/text_theme.dart';
-
+import 'package:nectar/core/core.dart';
+import 'package:nectar/features/home/screens/home_page.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -16,15 +13,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Nectar',
-      theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
-        appBarTheme: AppBarTheme(
-          backgroundColor: Colors.white,
-        ),
-        elevatedButtonTheme: ButtonsTheme.elevatedButtonTheme,
-        textTheme: TextsTheme.textTheme
-      ),
-      home: LoginPage(),
+      theme:AppTheme.appTheme,
+      home: HomePage()
+      //LoginPage(),
        //const SplashPage()
     );
   }
