@@ -13,10 +13,11 @@ class AppTheme {
         elevatedButtonTheme: ButtonsTheme.elevatedButtonTheme,
         textTheme: TextsTheme.textTheme,
         cardTheme: CardThemeData(
+          elevation: 0,
           color: AppColors.white,
           shape: RoundedRectangleBorder(
-          borderRadius: BorderRadiusGeometry.circular(15),
-          side: BorderSide(color: AppColors.subtitleColor),
+          borderRadius: BorderRadiusGeometry.circular(20),
+          side: BorderSide(color: AppColors.lightGrey),
 
         ),
         )

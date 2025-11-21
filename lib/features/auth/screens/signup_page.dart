@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nectar/core/core.dart';
 import 'package:nectar/features/auth/widgets/custom_text_form_field.dart';
-import 'package:nectar/features/home/screens/home_page.dart';
+import 'package:nectar/features/home/presenattion/screens/home_page.dart';
 import 'package:nectar/features/auth/screens/login_page.dart';
 
 class SignupPage extends StatefulWidget {

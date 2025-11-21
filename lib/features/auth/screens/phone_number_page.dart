@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nectar/features/auth/widgets/phone_number_field.dart';
-import 'package:nectar/features/home/screens/home_page.dart';
+import 'package:nectar/features/home/presenattion/screens/home_page.dart';
 import 'package:nectar/core/core.dart';
 
 class PhoneNumberPage extends StatelessWidget {

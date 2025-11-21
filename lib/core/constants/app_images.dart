@@ -18,8 +18,4 @@ class AppImages {
 
   static final String thirdOffer = "$_jpegPath/third_offer.jpeg";
 
-
-
-
-
 }
