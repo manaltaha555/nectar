@@ -42,6 +42,8 @@ dependencies:
   http: ^1.5.0
   flutter_screenutil: ^5.9.3
   flutter_bloc: ^9.1.1
+  hive_ce: ^2.15.1
+  hive_ce_flutter: ^2.3.3
 
 dev_dependencies:
   flutter_test:
@@ -83,7 +85,7 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Gilori
+    - family: Gilory
       fonts:
         - asset: assets\fonts\._Gilroy-ExtraBold.otf
           weight: 700

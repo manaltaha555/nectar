@@ -14,4 +14,6 @@ class AppColors {
   static final Color starColor = Color(0XFFF3603F);
   static final Color dotColor = Color(0xFFB4B4B8);
   static final Color skeletonBase = Color(0xFFE8E8E8);
+  static final Color skeletonHighlight = Color(0xFFF5F5F5);
+  static final Color productInfoBackground = Colors.blueGrey[50]!;
 }

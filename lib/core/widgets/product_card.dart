@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nectar/core/core.dart';
 import 'package:nectar/data/models/product.dart';
-import 'package:nectar/features/product_info/product_info.dart';
+import 'package:nectar/features/product_info/presenation/screens/product_info_page.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({super.key, required this.product});
@@ -18,7 +18,7 @@ class ProductCard extends StatelessWidget {
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => ProductInfo(product: product),
+            builder: (context) => ProductInfoPage(product: product),
           ),
         );
       },

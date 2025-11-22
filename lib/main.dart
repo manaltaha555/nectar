@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nectar/core/core.dart';
+import 'package:nectar/cubit/controllers/favorites_controller.dart';
 import 'package:nectar/cubit/controllers/products_controller.dart';
 import 'package:nectar/features/home/presenattion/screens/home_page.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(
-    BlocProvider(
-      create: (context) => ProductsController(),
+    MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => ProductsController()),
+        BlocProvider(create: (context) => FavoritesController()..loadFavorites()),
+      ],
       child: const MyApp(),
     ),
   );

@@ -14,6 +14,7 @@ export 'themes/text_theme.dart';
 
 // services
 export 'services/products_service.dart';
+export 'services/hive_services.dart';
 
 // widgets
 export 'widgets/product_card.dart';
