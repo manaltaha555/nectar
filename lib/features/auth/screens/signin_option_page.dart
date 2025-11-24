@@ -15,7 +15,7 @@ class SigninOptionPage extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Image.asset(AppImages.signOptions),
+          Image.asset(AppAssets.signOptions),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 16),
             child: Column(
@@ -48,7 +48,7 @@ class SigninOptionPage extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 16),
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.blue,
+                      backgroundColor: AppColors.emailButtonColor,
                     ),
                     onPressed: () {},
                     child: Row(
@@ -62,7 +62,7 @@ class SigninOptionPage extends StatelessWidget {
                 ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.red,
+                    backgroundColor: AppColors.googleButtonColor,
                   ),
                   onPressed: () {
                     Navigator.of(context).push(
@@ -73,7 +73,7 @@ class SigninOptionPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       SvgPicture.asset(
-                        AppImages.googleIcon,
+                        AppAssets.googleIcon,
                         height: 30,
                         width: 30,
                       ),

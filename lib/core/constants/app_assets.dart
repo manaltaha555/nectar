@@ -1,4 +1,4 @@
-class AppImages {
+class AppAssets {
   // static final String _svgPath = "assets/images/svg";
   static final String _pngPath = "assets/images/png";
   static final String _jpgPath = "assets/images/jpg";

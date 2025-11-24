@@ -33,7 +33,7 @@ class _LoginState extends State<LoginPage> {
             children: [
               Expanded(
                 child: Center(
-                  child: SvgPicture.asset(AppImages.coloredCarrot),
+                  child: SvgPicture.asset(AppAssets.coloredCarrot),
                 ),
               ),
               Expanded(

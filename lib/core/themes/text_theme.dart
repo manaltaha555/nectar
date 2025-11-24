@@ -4,6 +4,12 @@ import 'package:nectar/core/constants/app_colors.dart';
 class TextsTheme {
   static TextTheme textTheme = TextTheme(
     headlineLarge: TextStyle(
+      color: Colors.white,
+      fontWeight: FontWeight.w700,
+      fontFamily: "Gilori",
+      fontSize: 48,
+    ), //* used i get started page
+    headlineMedium: TextStyle(
       color: AppColors.titleColor,
       fontSize: 24,
       fontWeight: FontWeight.w600,
@@ -25,7 +31,8 @@ class TextsTheme {
       color: AppColors.titleColor,
       fontSize: 20,
       fontWeight: FontWeight.w700,
-      fontFamily: "Gilory",),
+      fontFamily: "Gilory",
+    ),
     bodyMedium: TextStyle(
       color: AppColors.subtitleColor,
       fontSize: 16,
@@ -56,6 +63,5 @@ class TextsTheme {
       fontWeight: FontWeight.w600,
       fontFamily: "Gilory",
     ),
-    
   );
 }

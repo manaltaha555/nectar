@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nectar/core/core.dart';
 import 'package:nectar/cubit/controllers/favorites_controller.dart';
 import 'package:nectar/cubit/controllers/products_controller.dart';
-import 'package:nectar/features/home/presenattion/screens/home_page.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nectar/features/main_navigation_bar/bottom_navigation_bar.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Nectar',
           theme: AppTheme.appTheme,
-          home: HomePage(),
+          home: const BottomNavBarScreen(),
           //LoginPage(),
           //const SplashPage()
         );

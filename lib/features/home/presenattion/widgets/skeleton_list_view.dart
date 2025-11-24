@@ -9,15 +9,19 @@ class SkeletonListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.separated(
       scrollDirection: Axis.horizontal,
-      itemCount: 3,
-      separatorBuilder: (context, index) => SizedBox(width: 10),
+      itemCount: 4,
+      separatorBuilder: (context, index) =>
+          SizedBox(width: AppSizes.smallHorizontalSpace),
       itemBuilder: (context, index) {
         return Shimmer.fromColors(
           baseColor: AppColors.skeletonBase,
           highlightColor: AppColors.skeletonBase,
           child: Card(
             color: AppColors.skeletonBase,
-            child: SizedBox(width: 220, height: 250),
+            child: SizedBox(
+              width: AppSizes.skeletonCardWidth,
+              height: AppSizes.skeletonCardHeight,
+            ),
           ),
         );
       },

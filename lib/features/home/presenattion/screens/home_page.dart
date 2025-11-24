@@ -6,6 +6,7 @@ import 'package:nectar/cubit/controllers/products_controller.dart';
 import 'package:nectar/cubit/states/products_state.dart';
 import 'package:nectar/features/home/presenattion/widgets/offer_widget.dart';
 import 'package:nectar/features/home/presenattion/widgets/skeleton_list_view.dart';
+import 'package:nectar/features/search/search_page.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
@@ -39,21 +40,29 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: AppSizes.semilargeHorizontalPadding,
+                    ),
                     child: Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(top: 8.0),
+                          padding: EdgeInsets.only(
+                            top: AppSizes.smallVerticalPadding,
+                          ),
                           child: !isLoading
-                              ? SvgPicture.asset(AppImages.coloredCarrot)
+                              ? SvgPicture.asset(AppAssets.coloredCarrot)
                               : Shimmer.fromColors(
                                   baseColor: AppColors.skeletonBase,
                                   highlightColor: AppColors.skeletonBase,
-                                  child: const CircleAvatar(radius: 35),
+                                  child: CircleAvatar(
+                                    radius: AppSizes.carrotRadius,
+                                  ),
                                 ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 20),
+                          padding: EdgeInsets.symmetric(
+                            vertical: AppSizes.semilargeVerticalPadding,
+                          ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -70,15 +79,18 @@ class _HomePageState extends State<HomePage> {
                         ),
                         GestureDetector(
                           onTap: () {
-                            //*moving to search page
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => SearchPage(),
+                              ),
+                            );
                           },
                           child: IgnorePointer(
                             child: TextFormField(
                               decoration: InputDecoration(
                                 hintText: "Search Store",
-                                hintStyle: theme.titleSmall!.copyWith(
-                                  fontSize: 14,
-                                ),
+                                hintStyle: theme.bodySmall,
                                 filled: true,
                                 fillColor: AppColors.searchFieldColor,
                                 prefixIcon: Icon(
@@ -87,7 +99,7 @@ class _HomePageState extends State<HomePage> {
                                 ),
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.all(
-                                    Radius.circular(20),
+                                    Radius.circular(AppSizes.homeRadius),
                                   ),
                                   borderSide: BorderSide(
                                     color: AppColors.searchFieldColor,
@@ -101,7 +113,7 @@ class _HomePageState extends State<HomePage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("Exclusive offer", style: theme.headlineLarge),
+                            Text("Exclusive offer", style: theme.headlineMedium),
                             GestureDetector(
                               onTap: () {},
                               child: Text(
@@ -117,14 +129,14 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   SizedBox(
-                    height: 300,
+                    height: AppSizes.cardHeight,
                     width: double.infinity,
                     child: state is ProductsLoaded
                         ? ListView.separated(
                             scrollDirection: Axis.horizontal,
                             itemCount: state.products.length,
                             separatorBuilder: (context, index) =>
-                                SizedBox(width: 10),
+                                SizedBox(width: AppSizes.smallHorizontalSpace),
                             itemBuilder: (context, index) {
                               return ProductCard(
                                 product: state.products[index],

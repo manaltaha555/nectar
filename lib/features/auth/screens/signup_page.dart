@@ -35,7 +35,7 @@ class _LoginState extends State<SignupPage> {
             children: [
               Expanded(
                 child: Center(
-                  child: SvgPicture.asset(AppImages.coloredCarrot),
+                  child: SvgPicture.asset(AppAssets.coloredCarrot),
                 ),
               ),
               Expanded(

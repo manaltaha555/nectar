@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nectar/core/core.dart';
 import 'package:nectar/data/models/offer.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -13,17 +14,17 @@ class OfferWidget extends StatefulWidget {
 
 List<Offer> offers = [
   Offer(
-    imagePath: AppImages.firstOffer,
+    imagePath: AppAssets.firstOffer,
     title: AppStrings.titleFirstOffer,
     description: AppStrings.descriptionFirstOffer,
   ),
   Offer(
-    imagePath: AppImages.secondOffer,
+    imagePath: AppAssets.secondOffer,
     title: AppStrings.titleSecondOffer,
     description: AppStrings.descriptionSecondOffer,
   ),
   Offer(
-    imagePath: AppImages.thirdOffer,
+    imagePath: AppAssets.thirdOffer,
     title: AppStrings.titleThirdOffer,
     description: AppStrings.descriptionThirdOffer,
   ),
@@ -35,9 +36,9 @@ class _OfferWidgetState extends State<OfferWidget> {
   Widget build(BuildContext context) {
     TextTheme theme = Theme.of(context).textTheme;
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 16),
+      padding: EdgeInsets.symmetric(vertical: AppSizes.mediumVerticalPadding),
       child: SizedBox(
-        height: 200,
+        height: AppSizes.offerHeight,
         child: PageView.builder(
           onPageChanged: (int newIndex) {
             setState(() {
@@ -51,7 +52,9 @@ class _OfferWidgetState extends State<OfferWidget> {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(18)),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(AppSizes.homeRadius),
+                    ),
                     image: DecorationImage(
                       image: AssetImage(offers[i].imagePath),
                       fit: BoxFit.cover,
@@ -59,8 +62,8 @@ class _OfferWidgetState extends State<OfferWidget> {
                   ),
                 ),
                 Positioned(
-                  top: 16,
-                  right: 16,
+                  top: 16.h,
+                  right: 16.w,
                   child: Column(
                     children: [
                       Text(
@@ -70,11 +73,13 @@ class _OfferWidgetState extends State<OfferWidget> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 8),
+                        padding: EdgeInsets.symmetric(
+                          vertical: AppSizes.smallVerticalPadding,
+                        ),
                         child: Text(
                           offers[i].title,
                           style: theme.titleSmall!.copyWith(
-                            color: Color.fromARGB(255, 226, 107, 101),
+                            color: AppColors.offerTextColor,
                           ),
                         ),
                       ),
@@ -83,7 +88,7 @@ class _OfferWidgetState extends State<OfferWidget> {
                 ),
                 if (!widget.isLoading)
                   Positioned(
-                    bottom: 10,
+                    bottom: 10.h,
                     child: AnimatedSmoothIndicator(
                       activeIndex: index,
                       count: offers.length,
@@ -91,9 +96,9 @@ class _OfferWidgetState extends State<OfferWidget> {
                         dotColor: AppColors.dotColor,
                         activeDotColor: AppColors.primaryColor,
                         expansionFactor: 2.0,
-                        dotHeight: 10,
-                        dotWidth: 10,
-                        spacing: 8,
+                        dotHeight: AppSizes.dotHeight,
+                        dotWidth: AppSizes.dotWidth,
+                        spacing: AppSizes.dotSpaces,
                       ),
                     ),
                   ),

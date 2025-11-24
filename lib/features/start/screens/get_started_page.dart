@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:nectar/core/core.dart';
 import 'package:nectar/features/auth/screens/signin_option_page.dart';
 
 class GetStartedPage extends StatelessWidget {
@@ -7,18 +8,18 @@ class GetStartedPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextTheme theme = Theme.of(context).textTheme;
+    TextTheme textTheme = Theme.of(context).textTheme;
 
     return Container(
       decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage("assets/images/GetStarted.png"),
-        ),
+        image: DecorationImage(image: AssetImage(AppAssets.getStarted)),
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 32),
+          padding: EdgeInsets.symmetric(
+            horizontal: AppSizes.largeHorizontalPadding,
+          ),
           child: Column(
             children: [
               Expanded(
@@ -27,46 +28,47 @@ class GetStartedPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
-                      child: SvgPicture.asset("assets/icons/carrot.svg"),
+                      padding: EdgeInsets.only(
+                        bottom: AppSizes.smallVerticalPadding,
+                      ),
+                      child: SvgPicture.asset(AppAssets.whiteCarrot),
                     ),
                     Text(
-                      "Welcome\n to our store",
+                      AppStrings.welcomeMessage,
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w700,
-                        fontFamily: "Gilori",
-                        fontSize: 48,
-                      ),
+                      style: textTheme.headlineLarge,
                     ),
                     Text(
-                      "Get your groceries in as fast as one hour",
-                      style: TextStyle(
-                        color: Colors.white38,
-                        fontSize: 16,
-                        fontFamily: "Gilori",
-                      ),
+                      AppStrings.subWelcomeMessage,
+                      style: textTheme.bodyMedium,
+                      // style: TextStyle(
+                      //   color: Colors.white38,
+                      //   fontSize: 16,
+                      //   fontFamily: "Gilori",
+                      // ),
                     ),
                   ],
                 ),
               ),
 
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 32),
+                padding: EdgeInsets.symmetric(
+                  vertical: AppSizes.largeVerticalPadding,
+                ),
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.of(context).pushAndRemoveUntil(
                       MaterialPageRoute(
                         builder: (context) => SigninOptionPage(),
                       ),
-                      (Route<dynamic> route) =>
-                          false, 
+                      (Route<dynamic> route) => false,
                     );
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [Text("Get started", style: theme.labelMedium)],
+                    children: [
+                      Text("Get started", style: textTheme.labelMedium),
+                    ],
                   ),
                 ),
               ),
